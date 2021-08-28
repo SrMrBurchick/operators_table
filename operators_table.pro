@@ -13,7 +13,7 @@ HEADERS +=                                                                      
         inc/database.hpp                                                        \
 
 SOURCES +=                                                                      \
-        main.cpp                                                                \
+        src/main.cpp                                                                \
         src/database.cpp                                                        \
 
 RESOURCES += qml.qrc

@@ -6,10 +6,19 @@ CONFIG += c++11
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-SOURCES += \
-        main.cpp
+INCLUDEPATH +=                                                                  \
+        inc
+
+HEADERS +=                                                                      \
+        inc/database.hpp                                                        \
+
+SOURCES +=                                                                      \
+        main.cpp                                                                \
+        src/database.cpp                                                        \
 
 RESOURCES += qml.qrc
+
+LIBS += -lsqlite3
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =

@@ -1,13 +1,13 @@
 #ifndef __COMMON_HPP__
 #define __COMMON_HPP__
 
-#include <string>
+#include <QString>
 
 typedef enum{
     eCountry = 0,
     eOperators
 } eTableType_t;
 
-std::string& getCountryCodeImgPath(const std::string& code);
+QString getCountryCodeImgPath(QString code);
 
 #endif /* __COMMON_HPP__ */

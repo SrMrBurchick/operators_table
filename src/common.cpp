@@ -1,23 +1,15 @@
+
 #include <cstring>
 
 #include "../inc/common.hpp"
 
-#define COUNTRY_PATH_FMT "qml/img/countries/%s.png"
+#define COUNTRY_PATH_FMT "qrc:qml/img/countries/"
 
-std::string& getCountryCodeImgPath(const std::string &code) {
-    char *buff = NULL;
-    std::string path;
-    int len;
+QString getCountryCodeImgPath(QString code) {
+    QString path = COUNTRY_PATH_FMT;
 
-    len = sprintf(NULL, COUNTRY_PATH_FMT, code.c_str());
-
-    buff = new char(len + 1);
-
-    sprintf(buff, COUNTRY_PATH_FMT, code.c_str());
-
-    path = buff;
-
-    delete buff;
+    path.append(code);
+    path.append(".png");
 
     return path;
 }

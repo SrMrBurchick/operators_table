@@ -13,6 +13,7 @@ HEADERS +=                                                                      
         inc/common.hpp                                                          \
         inc/country.hpp                                                         \
         inc/country_model.hpp                                                   \
+        inc/country_reader.hpp                                                  \
         inc/database.hpp                                                        \
         inc/errors.hpp                                                          \
         inc/operator.hpp                                                        \
@@ -21,6 +22,7 @@ SOURCES +=                                                                      
         src/common.cpp                                                          \
         src/country.cpp                                                         \
         src/country_model.cpp                                                   \
+        src/country_reader.cpp                                                  \
         src/database.cpp                                                        \
         src/main.cpp                                                            \
         src/operator.cpp                                                        \

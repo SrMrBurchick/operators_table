@@ -2,31 +2,34 @@
 #define __COUNTRY_MODEL_HPP__
 
 #include <QAbstractListModel>
-#include <list>
+#include <vector>
 
 #include "country.hpp"
+#include "country_reader.hpp"
 
-typedef enum {
-    eNameRole = Qt::UserRole,
+enum eCountryRole{
+    eNameRole = Qt::UserRole + 1,
     eImgRole,
-} eCountryRole_t;
+};
 
 class CountryModel : public QAbstractListModel {
     Q_OBJECT
 
     public:
-        CountryModel() = default;
+        CountryModel();
         virtual ~CountryModel() = default;
-
-        eErrors_t addNewCountry(Country &country);
-        eErrors_t addNewCountry(int mcc, const std::string &code, const std::string &name);
 
         virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
         virtual QHash<int, QByteArray> roleNames() const override;
         virtual int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
+        static eErrors_t registerModel(const std::string& modelName);
+
     private:
-        std::list<std::shared_ptr<Country>> m_countries;
+        bool updateData();
+
+        CountryReader m_reader;
+        std::vector<Country> m_countries;
 };
 
 #endif /* __COUNTRY_MODEL_HPP__ */

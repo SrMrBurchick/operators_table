@@ -7,6 +7,8 @@
         <file>qml/Base/BaseDelegate.qml</file>
         <file>qml/System/qmldir</file>
         <file>qml/System/Style.qml</file>
+        <file>qml/Views/qmldir</file>
+        <file>qml/Views/CountryView.qml</file>
         <file>qml/Delegates/qmldir</file>
         <file>qml/Delegates/CountryDelegate.qml</file>
         <!-- Images -->

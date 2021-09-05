@@ -31,6 +31,8 @@ RESOURCES += qml.qrc
 
 LIBS += -lsqlite3
 
+DEFINES += "PROJECT_PATH=\"$$_PRO_FILE_PWD_\""
+
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH = qml
 QML2_IMPORT_PATH = qml

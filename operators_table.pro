@@ -13,7 +13,6 @@ HEADERS +=                                                                      
         inc/database.hpp                                                        \
 
 SOURCES +=                                                                      \
-        src/main.cpp                                                                \
         src/database.cpp                                                        \
 
 RESOURCES += qml.qrc
@@ -21,7 +20,8 @@ RESOURCES += qml.qrc
 LIBS += -lsqlite3
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
-QML_IMPORT_PATH =
+QML_IMPORT_PATH = qml
+QML2_IMPORT_PATH = qml
 
 # Additional import path used to resolve QML modules just for Qt Quick Designer
 QML_DESIGNER_IMPORT_PATH =

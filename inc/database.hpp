@@ -3,6 +3,7 @@
 
 #include <sqlite3.h>
 #include <string>
+#include <utility>
 
 #include <QObject>
 #include <QJsonArray>
@@ -16,7 +17,7 @@ class Database : public QObject {
     public:
         ~Database();
 
-        eErrors_t sendRequest(const std::string &request);
+        std::pair<eErrors_t, QJsonArray> sendRequest(const std::string &request);
         static Database *createDatabase(const std::string &name);
         static Database *getDatabase();
 
@@ -25,7 +26,6 @@ class Database : public QObject {
 
         sqlite3 *db_sqlite;
         std::string db_name;
-        QJsonArray responce;
 
         static Database *db_instance;
 

@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "database.hpp"
+#include "../inc/database.hpp"
 
 Database *Database::db_instance = nullptr;
 
@@ -58,24 +58,22 @@ Database *Database::getDatabase() {
     return  Database::db_instance;
 }
 
-eErrors_t Database::sendRequest(const std::string &request) {
+std::pair<eErrors_t, QJsonArray> Database::sendRequest(const std::string &request) {
     int rc = SQLITE_OK;
+    QJsonArray responce;
     char *errMsg = nullptr;
 
-    while (true != responce.isEmpty()) {
-        responce.removeLast();
-    }
+    std::cout << "Request: " << request.c_str() << std::endl;
 
-    rc = sqlite3_exec(db_sqlite, request.c_str(), callback, nullptr, &errMsg);
+    rc = sqlite3_exec(db_sqlite, request.c_str(), callback, &responce, &errMsg);
     if (SQLITE_OK != rc) {
         std::cerr << "SQLITE Error: " << errMsg << std::endl;
         sqlite3_free(errMsg);
 
-        return eError;
+        return std::make_pair(eError, responce);
     } else {
         std::cout << "Operation completed succesfully" << std::endl;
-        emit responceRecived(responce);
     }
 
-    return  eSucces;
+    return std::make_pair(eSucces, responce);
 }

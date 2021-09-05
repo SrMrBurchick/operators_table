@@ -1,27 +1,34 @@
+#include <algorithm>
+
 #include "../inc/country_reader.hpp"
+#include "../inc/database.hpp"
 
-static const std::vector<Country> st_country = {
-    {289, "GE-AB", "Abkhazia"},
-    {505, "AU", "Australia"},
-    {232, "AT", "Austria"},
-    {400, "AZ", "Azerbaijan"},
-    {276, "AL", "Albania"},
-    {603, "DZ", "Algeria"},
-    {332, "VI", "United States Virgin Islands"},
-    {544, "AS", "American Samoa"},
-    {631, "AO", "Angolia"},
-    {213, "AD", "Andorra"},
-    {365, "AI", "Anguilla"},
-    {344, "AG", "Antigua and Barbuda"},
-    {722, "AR", "Argentina"},
-    {283, "AM", "Armenia"},
-    {363, "AW", "Aruba"},
-    {412, "AF", "Afghanistan"},
-    {364, "BS", "Bahamas"},
-    {470, "BD", "Bangladesh"},
-};
-
+#define SELECT_FROM_COUNTRIES "SELECT * from countries ORDER BY name ASC;"
 
 std::pair<bool, std::vector<Country>> CountryReader::requestCountries() {
-    return std::make_pair(true, st_country);
+    QJsonArray responce = {};
+    auto db = Database::getDatabase();
+    eErrors_t result = eSucces;
+    std::vector<Country> data;
+
+    std::tie(result, responce) = db->sendRequest(SELECT_FROM_COUNTRIES);
+
+    if (eSucces != result) {
+        return std::make_pair(false, data);
+    }
+
+    for (const auto& item : responce) {
+        QJsonObject obj = item.toObject();
+        Country country(obj["mcc"].toInt(),
+                        obj["code"].toString(),
+                        obj["name"].toString());
+
+        if(data.end() != std::find(data.begin(), data.end(), country)) {
+            continue;
+        }
+
+        data.push_back(country);
+    }
+
+    return std::make_pair(true, data);
 }

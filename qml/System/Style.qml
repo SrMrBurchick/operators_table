@@ -5,4 +5,5 @@ QtObject {
     readonly property int countryFontSize: 14
     readonly property int operatorFontSize: 14
     readonly property int baseSpacing: 2
+    readonly property int countrySpacing: 20
 }

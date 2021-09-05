@@ -1,19 +1,14 @@
 import QtQuick 2.0
 import Base 1.0
 import Delegates 1.0
+import System 1.0
+import Countries 1.0
 
 ListView {
     id: root
     anchors.fill: parent
-    model: ListModel {
-        /* Test Model TODO: Add cpp model */
-        ListElement {
-            country: "Japan"
-            countryImg: "qrc:/qml/img/countries/JP.png"
-        }
-    }
+    spacing: Style.countrySpacing
+    model: CountryModel {}
     delegate: CountryDelegate {
-        name: country
-        img: countryImg
     }
 }

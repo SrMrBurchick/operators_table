@@ -1,0 +1,3 @@
+module Base
+BaseText 1.0 BaseText.qml
+BaseDelegate 1.0 BaseDelegate.qml

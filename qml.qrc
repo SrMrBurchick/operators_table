@@ -1,5 +1,9 @@
 <RCC>
     <qresource prefix="/">
-        <file>main.qml</file>
+        <file alias="main.qml">qml/main.qml</file>
+        <!-- Components -->
+        <file>qml/Base/qmldir</file>
+        <file>qml/Base/BaseText.qml</file>
+        <file>qml/Base/BaseDelegate.qml</file>
     </qresource>
 </RCC>

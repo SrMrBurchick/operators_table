@@ -5,5 +5,7 @@
         <file>qml/Base/qmldir</file>
         <file>qml/Base/BaseText.qml</file>
         <file>qml/Base/BaseDelegate.qml</file>
+        <file>qml/System/qmldir</file>
+        <file>qml/System/Style.qml</file>
     </qresource>
 </RCC>

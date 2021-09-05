@@ -11,9 +11,11 @@ INCLUDEPATH +=                                                                  
 
 HEADERS +=                                                                      \
         inc/database.hpp                                                        \
+        inc/errors.hpp                                                          \
 
 SOURCES +=                                                                      \
         src/database.cpp                                                        \
+        src/main.cpp                                                            \
 
 RESOURCES += qml.qrc
 

@@ -10,10 +10,12 @@ INCLUDEPATH +=                                                                  
         inc
 
 HEADERS +=                                                                      \
+        inc/common.hpp                                                          \
         inc/database.hpp                                                        \
         inc/errors.hpp                                                          \
 
 SOURCES +=                                                                      \
+        src/common.cpp                                                          \
         src/database.cpp                                                        \
         src/main.cpp                                                            \
 

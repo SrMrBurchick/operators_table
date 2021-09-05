@@ -11,12 +11,14 @@ INCLUDEPATH +=                                                                  
 
 HEADERS +=                                                                      \
         inc/common.hpp                                                          \
+        inc/country_model.hpp                                                   \
         inc/database.hpp                                                        \
         inc/errors.hpp                                                          \
         inc/operator.hpp                                                        \
 
 SOURCES +=                                                                      \
         src/common.cpp                                                          \
+        src/country.cpp                                                         \
         src/database.cpp                                                        \
         src/main.cpp                                                            \
         src/operator.cpp                                                        \

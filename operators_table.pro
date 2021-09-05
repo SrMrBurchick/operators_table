@@ -13,11 +13,13 @@ HEADERS +=                                                                      
         inc/common.hpp                                                          \
         inc/database.hpp                                                        \
         inc/errors.hpp                                                          \
+        inc/operator.hpp                                                        \
 
 SOURCES +=                                                                      \
         src/common.cpp                                                          \
         src/database.cpp                                                        \
         src/main.cpp                                                            \
+        src/operator.cpp                                                        \
 
 RESOURCES += qml.qrc
 

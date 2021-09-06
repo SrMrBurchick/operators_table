@@ -1,7 +1,10 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 
+#include <iostream>
+
 #include "../inc/country_model.hpp"
+#include "../inc/database.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -13,6 +16,10 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
     engine.addImportPath(":/qml");
+
+    std::cout << QT_STRINGIFY(PROJECT_PATH) << std::endl;
+
+    Database::createDatabase(QT_STRINGIFY(PROJECT_PATH) "/system.db");
 
     CountryModel::registerModel("Countries");
 

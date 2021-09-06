@@ -3,27 +3,20 @@ import System 1.0
 
 import Base 1.0
 
-Rectangle {
+Row {
     id: root
 
     property string text
     property int textSize
     property string imgSource
 
-    anchors.left: parent.left
-    anchors.right: parent.right
+    spacing: Style.baseSpacing
 
-    Row {
-        anchors.fill: root
-        spacing: Style.baseSpacing
-        Image {
-            anchors.top: parent.top
-            anchors.bottom: parent.botom
-            source: root.imgSource
-        }
-        BaseText {
-            text: root.text
-            font.pixelSize: root.textSize
-        }
+    Image {
+        source: root.imgSource
+    }
+    BaseText {
+        text: root.text
+        font.pixelSize: root.textSize
     }
 }

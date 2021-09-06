@@ -1,2 +1,3 @@
 module Delegates
 CountryDelegate 1.0 CountryDelegate.qml
+OperatorDelegate 1.0 OperatorDelegate.qml

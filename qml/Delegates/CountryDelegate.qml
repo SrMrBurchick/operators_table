@@ -1,20 +1,18 @@
 import QtQuick 2.0
 import Base 1.0
 import System 1.0
+import Delegates 1.0
 
-Rectangle {
+Column {
     id: root
+    width: parent.width
 
-    anchors.left: parent.left
-    anchors.right: parent.right
+    property bool colapse: true
 
-    Row {
-        spacing: Style.baseSpacing
-        anchors.fill: root
-        BaseDelegate {
-            text: name
-            imgSource: img
-            textSize: Style.countryFontSize
-        }
+    BaseDelegate {
+        id: country
+        text: name
+        imgSource: img
+        textSize: Style.countryFontSize
     }
 }

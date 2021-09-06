@@ -7,7 +7,6 @@ import Countries 1.0
 ListView {
     id: root
     anchors.fill: parent
-    spacing: Style.countrySpacing
     model: CountryModel {}
     delegate: CountryDelegate {
     }

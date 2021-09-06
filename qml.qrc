@@ -11,6 +11,7 @@
         <file>qml/Views/CountryView.qml</file>
         <file>qml/Delegates/qmldir</file>
         <file>qml/Delegates/CountryDelegate.qml</file>
+        <file>qml/Delegates/OperatorDelegate.qml</file>
         <!-- Images -->
         <file>qml/img/countries/AD.png</file>
         <file>qml/img/countries/AE.png</file>

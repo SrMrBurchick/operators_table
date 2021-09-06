@@ -11,5 +11,5 @@ Country::~Country() {
 }
 
 bool Country::operator == (const Country &country) {
-    return m_mcc == country.m_mcc && m_code == country.m_code;
+    return m_code == country.m_code;
 }

@@ -958,5 +958,9 @@
         <file>qml/img/operators/734_6.png</file>
         <file>qml/img/operators/740_0.png</file>
         <file>qml/img/operators/740_1.png</file>
+        <!-- System imgaes -->
+        <file>qml/img/system/normal_triangle.png</file>
+        <file>qml/img/system/collapsed_triangle.png</file>
+        <file>qml/img/system/plus.png</file>
     </qresource>
 </RCC>

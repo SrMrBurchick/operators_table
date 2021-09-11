@@ -4,7 +4,8 @@ import QtQuick 2.0
 QtObject {
     readonly property int countryFontSize: 14
     readonly property int operatorFontSize: 14
-    readonly property int baseSpacing: 2
+    readonly property int baseSpacing: 5
+    readonly property int operatorsMargin: 30
     readonly property int countrySpacing: 20
     readonly property int rectangleSize: 10
     readonly property int plusSize: 15

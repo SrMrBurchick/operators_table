@@ -14,6 +14,7 @@
         <file>qml/Delegates/CountryDelegate.qml</file>
         <file>qml/Delegates/OperatorDelegate.qml</file>
         <file>qml/Editor/qmldir</file>
+        <file>qml/Editor/Body.qml</file>
         <file>qml/Editor/Title.qml</file>
         <!-- Images -->
         <file>qml/img/countries/AD.png</file>

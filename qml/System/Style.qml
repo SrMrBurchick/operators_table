@@ -6,10 +6,14 @@ QtObject {
     readonly property int operatorFontSize: 14
     readonly property int baseSpacing: 5
     readonly property int operatorsMargin: 30
-    readonly property int countrySpacing: 20
     readonly property int rectangleSize: 10
     readonly property int plusSize: 15
     readonly property int plusMargin: 20
+
+    readonly property int countryImgSize: 20
+    readonly property int countrySpacing: 10
+    readonly property int countryMargin: 10
+
     readonly property string normalTriangle: "qrc:qml/img/system/normal_triangle.png"
     readonly property string collapsedTriangle: "qrc:qml/img/system/collapsed_triangle.png"
     readonly property string plus: "qrc:qml/img/system/plus.png"

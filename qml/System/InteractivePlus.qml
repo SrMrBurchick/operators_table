@@ -9,10 +9,10 @@ import Countries 1.0
 Image {
     id: root
 
-    property bool empty: true
-    property int mcc: 0
-    property int mnc: 0
-    property string name: ""
+    property bool plusEmpty: true
+    property int plusMcc: 0
+    property int plusMnc: 0
+    property string plusName: ""
 
     source: Style.plus
     height: Style.plusSize

@@ -23,4 +23,7 @@ QtObject {
     readonly property int editorHeight: 150
     readonly property int editorIconSize: 20
     readonly property int editorMargin: 5
+
+    readonly property string mainTitle: "Operators table"
+    readonly property string editorTitle: "Operator editor"
 }

@@ -21,7 +21,19 @@ Image {
     MouseArea {
         anchors.fill: root
         onClicked: {
-            /* TODO: Add opeator editor creation */
+            console.log("Operator: " + root.plusName + " mcc: " + root.plusMcc + " mnc: " + root.plusMnc);
+            var component = Qt.createComponent("qrc:qml/editor.qml");
+            var window = component.createObject(root, {
+                empty: root.plusEmpty,
+                name: root.plusName,
+                mcc: root.plusMcc,
+                mnc: root.plusMnc
+            });
+            if (null != window) {
+                window.show();
+            } else {
+                console.log("Failed to create window");
+            }
         }
     }
 }

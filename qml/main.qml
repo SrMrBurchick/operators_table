@@ -12,4 +12,8 @@ Window {
     visible: true
     title: Style.mainTitle
     CountryView {}
+    InteractivePlus {
+        x: root.width - width - Style.plusMargin
+        y: root.height - height - Style.plusMargin
+    }
 }

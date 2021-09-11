@@ -963,5 +963,6 @@
         <file>qml/img/system/normal_triangle.png</file>
         <file>qml/img/system/collapsed_triangle.png</file>
         <file>qml/img/system/plus.png</file>
+        <file>qml/img/system/uknown.png</file>
     </qresource>
 </RCC>

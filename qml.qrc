@@ -16,6 +16,7 @@
         <file>qml/Editor/qmldir</file>
         <file>qml/Editor/Body.qml</file>
         <file>qml/Editor/Title.qml</file>
+        <file>qml/editor.qml</file>
         <!-- Images -->
         <file>qml/img/countries/AD.png</file>
         <file>qml/img/countries/AE.png</file>

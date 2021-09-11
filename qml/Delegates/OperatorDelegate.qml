@@ -11,6 +11,7 @@ Item {
     Row {
         spacing: Style.baseSpacing
         anchors.fill: root
+        anchors.leftMargin: Style.operatorsMargin
         BaseDelegate {
             text: name
             imgSource: img
@@ -19,6 +20,12 @@ Item {
         BaseText {
             text: "(" + mcc + ", " + mnc + ")"
             font.pixelSize: Style.operatorFontSize
+        }
+        InteractivePlus {
+            plusName: name
+            plusMnc: mnc
+            plusMcc: mcc
+            plusEmpty: false
         }
     }
 }

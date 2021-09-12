@@ -14,10 +14,12 @@ QVariant CountryModel::data(const QModelIndex &index, int role) const {
     const Country& country{m_countries.at(index.row())};
 
     switch (role) {
-    case eCountryRole::eNameRole:
+    case eCountryRole::eCountryNameRole:
         return QVariant::fromValue(country.getName());
-    case eCountryRole::eImgRole:
+    case eCountryRole::eCountryImgRole:
         return QVariant::fromValue(country.getImgPath());
+    case eCountryRole::eCountryMccRole:
+        return QVariant::fromValue(country.getMcc());
     default:
         return true;
     }
@@ -28,8 +30,9 @@ QVariant CountryModel::data(const QModelIndex &index, int role) const {
 QHash<int, QByteArray> CountryModel::roleNames() const {
     QHash<int, QByteArray> roleNames;
 
-    roleNames[eCountryRole::eNameRole] = "name";
-    roleNames[eCountryRole::eImgRole] = "img";
+    roleNames[eCountryRole::eCountryNameRole] = "name";
+    roleNames[eCountryRole::eCountryImgRole] = "img";
+    roleNames[eCountryRole::eCountryMccRole] = "mcc";
 
     return roleNames;
 }
@@ -59,4 +62,3 @@ bool CountryModel::updateData() {
 
     return result;
 }
-

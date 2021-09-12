@@ -9,5 +9,6 @@ typedef enum{
 } eTableType_t;
 
 QString getCountryCodeImgPath(QString code);
+QString getOperatorImgPath(QString mcc, QString mnc);
 
 #endif /* __COMMON_HPP__ */

@@ -4,9 +4,7 @@ import System 1.0
 
 Item {
     id: root
-
-    anchors.left: parent.left
-    anchors.right: parent.right
+    height: Style.countryImgSize
 
     Row {
         spacing: Style.baseSpacing

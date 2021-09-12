@@ -17,6 +17,8 @@ HEADERS +=                                                                      
         inc/database.hpp                                                        \
         inc/errors.hpp                                                          \
         inc/operator.hpp                                                        \
+        inc/operator_model.hpp                                                  \
+        inc/operator_reader.hpp                                                 \
 
 SOURCES +=                                                                      \
         src/common.cpp                                                          \
@@ -26,6 +28,8 @@ SOURCES +=                                                                      
         src/database.cpp                                                        \
         src/main.cpp                                                            \
         src/operator.cpp                                                        \
+        src/operator_model.cpp                                                  \
+        src/operator_reader.cpp                                                 \
 
 RESOURCES += qml.qrc
 

@@ -1,9 +1,10 @@
 #include "../inc/country.hpp"
 #include "../inc/common.hpp"
 
-Country::Country(int mcc, QString code, QString name)
-    : m_mcc{mcc}, m_code{code}, m_name{name} {
+Country::Country(QString mcc, QString code, QString name)
+    : m_code{code}, m_name{name} {
     m_imgPath = getCountryCodeImgPath(m_code);
+    m_mcc = mcc.toInt();
 }
 
 Country::~Country() {

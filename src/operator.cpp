@@ -1,11 +1,12 @@
 #include "../inc/operator.hpp"
+#include "../inc/common.hpp"
 
-Operator::Operator(int nmc, int mcc, const std::string & name) {
-    /* TODO: Implement */
+Operator::Operator(QString mcc, QString mnc, QString name)
+    : m_mcc{mcc}, m_mnc{mnc}, m_name{name} {
+
+    m_imgPath = getOperatorImgPath(mcc, mnc);
 }
 
 bool Operator::operator == (const Operator &dest) {
-    /* TODO: Implement */
-
-    return false;
+    return m_mcc == dest.m_mcc && m_mnc == dest.m_mnc;
 }

@@ -4,6 +4,7 @@
 #include <iostream>
 
 #include "../inc/country_model.hpp"
+#include "../inc/operator_model.hpp"
 #include "../inc/database.hpp"
 
 int main(int argc, char *argv[])
@@ -22,6 +23,7 @@ int main(int argc, char *argv[])
     Database::createDatabase(QT_STRINGIFY(PROJECT_PATH) "/system.db");
 
     CountryModel::registerModel("Countries");
+    OperatorModel::registerModel("Operators");
 
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,

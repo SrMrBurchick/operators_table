@@ -2,10 +2,13 @@ import QtQuick 2.0
 import Base 1.0
 import System 1.0
 import Delegates 1.0
+import Operators 1.0
 
 Rectangle{
     id: root
     height: country.height + operators.height
+
+    property bool collapsed: false
 
     Column {
         anchors.leftMargin: Style.countryMargin
@@ -19,12 +22,15 @@ Rectangle{
                 MouseArea {
                     anchors.fill: parent
                     onClicked: {
-                        if (0 != operators.height) {
+                        if (root.collapsed) {
+                            root.collapsed = false;
                             operators.height = 0;
                             operators.model = {};
                             parent.source = Style.normalTriangle;
                         } else {
-                            operators.model = operators_model;
+                            root.collapsed = true;
+                            console.log("Kek: " + mcc);
+                            operators.model = operators_model.createObject(parent, {countryMCC: mcc});
                             operators.height = operators.count * Style.countryImgSize;
                             parent.source = Style.collapsedTriangle;
                         }
@@ -39,14 +45,9 @@ Rectangle{
                 textSize: Style.countryFontSize
             }
         }
-        ListModel {
+        Component {
             id: operators_model
-            /* TODO: Add operators model */
-            ListElement{
-                name: "Kokos"
-                img: "qrc:qml/img/operators/206_1.png"
-                mcc: 2
-                mnc: 4
+            OperatorModel {
             }
         }
         ListView {

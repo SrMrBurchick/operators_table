@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <QString>
 
 #include "../inc/country_reader.hpp"
 #include "../inc/database.hpp"
@@ -19,7 +20,7 @@ std::pair<bool, std::vector<Country>> CountryReader::requestCountries() {
 
     for (const auto& item : responce) {
         QJsonObject obj = item.toObject();
-        Country country(obj["mcc"].toInt(),
+        Country country(obj["mcc"].toString(),
                         obj["code"].toString(),
                         obj["name"].toString());
 

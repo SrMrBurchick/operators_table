@@ -11,13 +11,14 @@
 
 class Country{
     public:
-        Country(int mcc, const QString code, QString name);
+        Country(QString mcc, const QString code, QString name);
         Country(const Country&) = default;
         virtual ~Country();
 
         bool operator == (const Country &country);
 
         QString getName() const { return m_name; }
+        int getMcc() const { return m_mcc; }
         QString getImgPath() const { return m_imgPath; }
 
     private:

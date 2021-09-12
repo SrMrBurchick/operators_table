@@ -8,8 +8,9 @@
 #include "country_reader.hpp"
 
 enum eCountryRole{
-    eNameRole = Qt::UserRole + 1,
-    eImgRole,
+    eCountryNameRole = Qt::UserRole + 1,
+    eCountryImgRole,
+    eCountryMccRole,
 };
 
 class CountryModel : public QAbstractListModel {

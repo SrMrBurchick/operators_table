@@ -37,7 +37,10 @@ SOURCES +=                                                                      
 
 RESOURCES += qml.qrc
 
-LIBS += -lsqlite3
+INCLUDEPATH += $$_PRO_FILE_PWD_/external/sqlite
+DEPENDPATH += $$_PRO_FILE_PWD_/external/sqlite
+
+LIBS += -L$$_PRO_FILE_PWD_/external/sqlite -lsqlite3
 
 DEFINES += "PROJECT_PATH=\"$$_PRO_FILE_PWD_\""
 

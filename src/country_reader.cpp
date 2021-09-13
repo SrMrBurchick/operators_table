@@ -33,3 +33,29 @@ std::pair<bool, std::vector<Country>> CountryReader::requestCountries() {
 
     return std::make_pair(true, data);
 }
+
+QString CountryReader::getCountryCode(QString mcc) {
+    QJsonArray responce = {};
+    auto db = Database::getDatabase();
+    QString request;
+    eErrors_t result = eSucces;
+
+
+    request.append("SELECT * FROM countries WHERE mcc = " + mcc + ";");
+
+    std::tie(result, responce) = db->sendRequest(request.toStdString().c_str());
+
+    if (eSucces != result) {
+        return {};
+    }
+
+    for (const auto& item : responce) {
+        QJsonObject obj = item.toObject();
+
+        qDebug() << obj;
+
+        return obj["code"].toString();
+    }
+
+    return {};
+}

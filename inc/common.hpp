@@ -10,5 +10,6 @@ typedef enum{
 
 QString getCountryCodeImgPath(QString code);
 QString getOperatorImgPath(QString mcc, QString mnc);
+bool isImgExist(QString path);
 
 #endif /* __COMMON_HPP__ */

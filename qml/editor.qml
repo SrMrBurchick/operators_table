@@ -2,6 +2,7 @@ import QtQuick 2.12
 import QtQuick.Window 2.12
 import System 1.0
 import Editor 1.0
+import SystemComponent 1.0
 
 Window {
     id: root
@@ -17,23 +18,14 @@ Window {
 
     flags: Qt.FramelessWindowHint
 
-    Item {
-        anchors.fill: parent
-        Title {
-            anchors.top: parent.top
-            id: _title
-        }
-
-        Body {
-            id: _body
-            anchors.top: _title.bottom
-            name: root.name
-            empty: root.empty
-            mcc: root.mcc
-            mnc: root.mnc
-            onClose: {
-                root.close();
-            }
+    Body {
+        id: _body
+        name: root.name
+        empty: root.empty
+        mcc: root.mcc
+        mnc: root.mnc
+        onClose: {
+            root.close();
         }
     }
 }

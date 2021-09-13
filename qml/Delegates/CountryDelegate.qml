@@ -15,24 +15,28 @@ Rectangle{
         Row {
             id: country
             spacing: Style.countrySpacing
-            Image {
-                source: Style.normalTriangle
+            Rectangle {
                 height: Style.rectangleSize
                 width: Style.rectangleSize
-                MouseArea {
+
+                Image {
                     anchors.fill: parent
-                    onClicked: {
-                        if (root.collapsed) {
-                            root.collapsed = false;
-                            operators.height = 0;
-                            operators.model = {};
-                            parent.source = Style.normalTriangle;
-                        } else {
-                            root.collapsed = true;
-                            console.log("Kek: " + mcc);
-                            operators.model = operators_model.createObject(parent, {countryMCC: mcc});
-                            operators.height = operators.count * Style.countryImgSize;
-                            parent.source = Style.collapsedTriangle;
+                    source: Style.normalTriangle
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: {
+                            if (root.collapsed) {
+                                root.collapsed = false;
+                                operators.height = 0;
+                                operators.model = {};
+                                parent.source = Style.normalTriangle;
+                            } else {
+                                root.collapsed = true;
+                                console.log("Kek: " + mcc);
+                                operators.model = operators_model.createObject(parent, {countryMCC: mcc});
+                                operators.height = operators.count * Style.countryImgSize;
+                                parent.source = Style.collapsedTriangle;
+                            }
                         }
                     }
                 }
@@ -43,6 +47,7 @@ Rectangle{
                 height: Style.countryImgSize
                 width: Style.countryImgSize
                 textSize: Style.countryFontSize
+                imgSize: Style.countryImgSize
             }
         }
         Component {

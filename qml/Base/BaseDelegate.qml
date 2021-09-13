@@ -7,11 +7,17 @@ Row {
     id: root
     property string text
     property int textSize
+    property int imgSize
     property string imgSource
 
     spacing: Style.baseSpacing
-    Image {
-        source: root.imgSource
+    Rectangle {
+        height: root.imgSize
+        width: root.imgSize
+        Image {
+            anchors.fill: parent
+            source: root.imgSource
+        }
     }
     BaseText {
         text: root.text

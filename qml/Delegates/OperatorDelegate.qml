@@ -14,6 +14,7 @@ Item {
             text: name
             imgSource: img
             textSize: Style.operatorFontSize
+            imgSize: Style.countryImgSize
         }
         BaseText {
             text: "(" + mcc + ", " + mnc + ")"

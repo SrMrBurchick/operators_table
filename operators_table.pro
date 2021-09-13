@@ -15,10 +15,12 @@ HEADERS +=                                                                      
         inc/country_model.hpp                                                   \
         inc/country_reader.hpp                                                  \
         inc/database.hpp                                                        \
+        inc/db_component.hpp                                                    \
         inc/errors.hpp                                                          \
         inc/operator.hpp                                                        \
         inc/operator_model.hpp                                                  \
         inc/operator_reader.hpp                                                 \
+        inc/system.hpp                                                          \
 
 SOURCES +=                                                                      \
         src/common.cpp                                                          \
@@ -26,10 +28,12 @@ SOURCES +=                                                                      
         src/country_model.cpp                                                   \
         src/country_reader.cpp                                                  \
         src/database.cpp                                                        \
+        src/db_component.cpp                                                    \
         src/main.cpp                                                            \
         src/operator.cpp                                                        \
         src/operator_model.cpp                                                  \
         src/operator_reader.cpp                                                 \
+        src/system.cpp                                                          \
 
 RESOURCES += qml.qrc
 

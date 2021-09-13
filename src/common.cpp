@@ -1,10 +1,12 @@
-
+#include <QFile>
 #include <cstring>
 
 #include "../inc/common.hpp"
 
-#define COUNTRY_PATH_FMT "qrc:qml/img/countries/"
-#define OPERATOR_PATH_FMT "qrc:qml/img/operators/"
+#define QRC_PATH "qrc:"
+#define COUNTRY_PATH_FMT "qml/img/countries/"
+#define OPERATOR_PATH_FMT "qml/img/operators/"
+#define UKNOWN_IMG "qrc:qml/img/system/uknown.png"
 
 QString getCountryCodeImgPath(QString code) {
     QString path = COUNTRY_PATH_FMT;
@@ -12,7 +14,11 @@ QString getCountryCodeImgPath(QString code) {
     path.append(code);
     path.append(".png");
 
-    return path;
+    if (!isImgExist(QString(QT_STRINGIFY(PROJECT_PATH)) + "/" + path)) {
+        return UKNOWN_IMG;
+    }
+
+    return QRC_PATH + path;
 }
 
 QString getOperatorImgPath(QString mcc, QString mnc) {
@@ -23,5 +29,13 @@ QString getOperatorImgPath(QString mcc, QString mnc) {
     path.append(mnc);
     path.append(".png");
 
-    return path;
+    if (!isImgExist(QString(QT_STRINGIFY(PROJECT_PATH)) + "/" + path)) {
+        return UKNOWN_IMG;
+    }
+
+    return QRC_PATH + path;
+}
+
+bool isImgExist(QString path) {
+    return QFile::exists(path);
 }
